@@ -1,0 +1,111 @@
+body {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin: 0; 
+  padding: 0 10px;
+  overflow-x: hidden;
+  color: #5d2e46;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 5vw; /* Tamaño de fuente relativo para celular */
+  text-shadow: 2px 2px 5px #fff;
+  font-weight: bold;
+}
+
+#foto {
+  border-radius: 20px;
+  width: 80vw;   /* Ancho relativo al viewport */
+  max-width: 320px;  /* Máximo ancho */
+  height: auto;   /* Altura automática para mantener proporción */
+  object-fit: cover;
+  border: 6px solid #ff477e;
+  margin: 20px auto;
+  box-shadow: 0 0 25px #ff477e;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+#mensaje {
+  font-size: 4vw;
+  margin: 10px 0 20px 0;
+  font-weight: 600;
+  color: #a61959;
+  text-shadow: 1px 1px 4px #fff;
+}
+
+#velasCanvas {
+  display: block;
+  margin: 0 auto 40px auto;
+  background: transparent;
+  width: 90vw;      /* ancho 90% del viewport */
+  max-width: 500px; /* máximo ancho */
+  height: auto;     /* altura automática */
+  aspect-ratio: 5 / 3; /* relación aspecto para que el canvas se ajuste */
+}
+
+/* Globos animados */
+.globo {
+  position: absolute;
+  bottom: -80px;
+  width: 10vw;    /* tamaño relativo */
+  max-width: 50px;
+  height: 15vw;
+  max-height: 75px;
+  border-radius: 20px 20px 25px 25px;
+  opacity: 0.9;
+  animation-name: subirGlobo;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.15));
+}
+
+@keyframes subirGlobo {
+  0% {
+    bottom: -80px;
+    opacity: 0.9;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+  }
+}
+
+#velasApagadasMsg {
+  font-size: 4vw;
+  font-weight: 600;
+  color: #7a2a4d;
+  margin-top: 15px;
+  min-height: 30px;
+}
+
+audio {
+  display: none;
+}
+
+#status {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #5d2e46;
+  text-shadow: 1px 1px 3px #fff;
+  font-size: 3.5vw;
+}
+
+/* Ajustes para pantallas más grandes */
+@media(min-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
+  #mensaje {
+    font-size: 28px;
+  }
+  #velasApagadasMsg {
+    font-size: 20px;
+  }
+  #status {
+    font-size: 18px;
+  }
+}
